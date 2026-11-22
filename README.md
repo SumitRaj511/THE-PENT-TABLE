@@ -80,27 +80,3 @@ For Vercel:
 5. Use the directory containing `index.html` as the project root.
 6. Deploy.
 
-## Demo Limitations
-
-This project demonstrates the food ordering interface and user experience.
-
-- Checkout does not process real payments.
-- Orders are stored locally in the browser.
-- No backend, database, or user authentication is connected.
-- No actual restaurant orders or deliveries are placed.
-- Stored data does not sync across devices and may be removed when browser data is cleared.
-
-## Future Improvements
-
-- User accounts and authentication.
-- Backend API and database integration.
-- Payment gateway integration.
-- Live order tracking.
-- Restaurant administration dashboard.
-- Customer ratings and reviews.
-
-## Media Credits
-
-Dough-making video attribution is available in:
-
-`assets/pizza-dough-source.txt`
