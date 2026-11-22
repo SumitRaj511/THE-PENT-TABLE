@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#10100f">
+<title>THE PENT TABLE · Food delivery in Bengaluru</title>
+<meta name="description" content="Discover Bengaluru's independent kitchens, browse their menus and build your order at The Pent Table.">
+<link rel="icon" href="brand.svg" type="image/svg+xml">
+<link rel="preload" href="assets/stack-crown.webp" as="image" fetchpriority="high">
+<link rel="preload" href="assets/editorial.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="feature.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a href="#restaurants" class="skip">Skip to restaurants</a>
+<header>
+ <div class="shell header-inner">
+  <a class="brand" href="./" aria-label="The Pent Table home"><img src="brand.svg" alt=""><span>THE PENT TABLE</span></a>
+  <nav aria-label="Main navigation"><button class="nav-link active" data-nav="discover">Discover</button><button class="nav-link" data-nav="saved">Saved</button><button class="nav-link" data-nav="orders">My orders</button></nav>
+  <div class="header-tools">
+   <button class="location-top" data-panel="location" aria-label="Change delivery location"><i data-icon="pin"></i><span id="region">Bengaluru</span><i data-icon="chevron-down" class="tiny"></i></button>
+   <span class="header-divider"></span>
+   <button class="bag-btn" data-panel="bag" aria-label="Open bag, 0 items"><i data-icon="bag"></i><span class="bag-word">Bag</span><span id="bag-num">0</span></button>
+   <button id="mobile-toggle" class="mobile-toggle" aria-label="Open navigation" aria-expanded="false"><i data-icon="menu"></i></button>
+  </div>
+ </div>
+ <div id="mobile-nav" hidden><button data-nav="discover">Discover</button><button data-nav="saved">Saved restaurants</button><button data-nav="orders">My orders</button><button data-panel="location">Delivery location</button></div>
+</header>
+<main>
+ <div id="assembly-track">
+ <div class="hero-pin">
+ <section class="hero" aria-label="Featured dishes">
+  <div class="hero-photo photo-0 current">
+   <div class="assembly-stage">
+    <div class="burger-object" role="img" aria-label="Truffle smashburger with sesame brioche, caramelised onions, cheddar patties and lettuce">
+     <img class="ingredient layer-base" src="assets/stack-base.webp" alt="" width="767" height="189">
+     <img class="ingredient layer-lettuce" src="assets/stack-lettuce.webp" alt="" width="872" height="163">
+     <img class="ingredient layer-patty" src="assets/stack-patty.webp" alt="" width="818" height="271">
+     <img class="ingredient layer-onion" src="assets/stack-onion.webp" alt="" width="843" height="169">
+     <img class="ingredient layer-crown" src="assets/stack-crown.webp" alt="" width="778" height="280" fetchpriority="high">
+    </div>
+   </div>
+  </div><div class="hero-photo photo-1"></div><div class="hero-photo photo-2"></div><div class="hero-shade"></div>
+  <div class="shell hero-wrap">
+   <div class="hero-copy">
+    <div class="eyebrow dark-gold"><span class="rule"></span>THE CHEF’S EDIT</div>
+    <h1>Good taste,<br><em>delivered.</em></h1>
+    <p>Exceptional food from standout local kitchens,<br class="desk-br"> delivered straight to your door.</p>
+    <button id="explore-btn" class="gold-btn"><i data-icon="cloche"></i>Explore restaurants</button>
+   </div>
+   <div class="hero-controls" aria-label="Featured dish carousel">
+    <button class="round dark" id="prev-slide" aria-label="Previous featured dish"><i data-icon="chevron-left"></i></button>
+    <span id="slide-counter">01 <span>/</span> 03</span>
+    <button class="round dark" id="next-slide" aria-label="Next featured dish"><i data-icon="chevron-right"></i></button>
+   </div>
+   <button type="button" class="assembly-cue" id="assembly-control" aria-label="Scroll to assemble the burger"><span class="scroll-mouse"></span><span id="assembly-caption">Scroll to assemble</span><span class="progress-line"><b></b></span></button>
+   <button id="hero-dish" class="hero-dish"><span class="caption-rule"></span><span><small>ON THE TABLE</small><strong id="feature-name">The Truffle Smash</strong></span><span class="dish-plus"><i data-icon="plus"></i></span></button>
+  </div>
+ </section>
+ <div class="ticker" aria-label="Chef-led kitchens. Freshly made to order. Local favourites. Delivered with care."><div class="ticker-track" aria-hidden="true" id="ticker-track"></div></div>
+ </div>
+ </div>
+ <section id="restaurants" class="collection shell">
+  <div class="collection-intro"><div><div class="eyebrow"><span class="rule"></span> <span id="collection-kicker">THE LOCAL SELECTION</span></div><h2 id="collection-title">Explore restaurants<span>.</span></h2></div>
+   <label class="search-box"><i data-icon="search"></i><input id="search" type="search" placeholder="Search restaurants or dishes" aria-label="Search restaurants or dishes"></label></div>
+  <div class="filter-row"><div id="categories" class="categories" aria-label="Filter by cuisine"></div><button class="filter-btn" data-panel="filters"><i data-icon="sliders"></i><span>Filters</span><b id="filter-count" hidden></b></button></div>
+  <div id="cards" class="cards"></div><p id="results-count" class="sr-only" aria-live="polite"></p>
+ </section>
+ <section class="signature-section" id="signature-dishes" aria-labelledby="signatures-title">
+   <div class="shell">
+    <div class="eyebrow dark-gold"><span class="rule"></span>THE DISH EDIT</div>
+    <h2 id="signatures-title">House <em>signatures.</em></h2>
+    <div id="signature-list" class="signature-list"></div>
+   </div>
+ </section>
+ <section class="kitchen-section shell" id="kitchen-spotlight" aria-labelledby="kitchen-title">
+   <div class="kitchen-image">
+    <video id="baker-film" width="1024" height="576" muted loop playsinline preload="none" poster="assets/pizza-dough-poster.webp" aria-label="Hands pressing and shaping pizza dough on a floured worktop"><source src="assets/pizza-dough-making.mp4" type="video/mp4"></video>
+    <button id="baker-playback" type="button" hidden aria-label="Play dough-making video"><svg aria-hidden="true" viewBox="0 0 24 24"><path class="film-play" d="m8 5 11 7-11 7Z"/><path class="film-pause" d="M6.5 5h4v14h-4zm7 0h4v14h-4z"/></svg></button>
+   </div>
+   <div class="kitchen-copy">
+    <div class="eyebrow"><span class="rule"></span>KITCHEN SPOTLIGHT</div>
+    <h2 id="kitchen-title">Inside <em>Forno Vecchio.</em></h2>
+    <p>Watch the rim of a Margherita blister in the wood-fired oven. At this Indiranagar kitchen, the toppings stay simple so the crust gets its moment.</p>
+    <div class="kitchen-detail"><i data-icon="pin"></i>Indiranagar, Bengaluru</div>
+    <button class="kitchen-button" data-menu="forno">Explore the menu</button>
+   </div>
+ </section>
+</main>
+<footer><div class="shell foot"><a class="brand" href="./"><img src="brand.svg" alt=""><span>THE PENT TABLE</span></a><span>Bengaluru, India</span><button id="back-top">Back to top <i data-icon="chevron-up"></i></button></div></footer>
+<dialog id="panel" aria-labelledby="panel-title"><div id="panel-content"></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
